@@ -1,0 +1,71 @@
+#include<stdio.h>
+int main()
+
+  {
+
+    int i,j,min,m,n,p,q,max;
+
+    m=0;n=0;p=0;q=0;  //初始化
+
+    int a[4][4]={{1,2,4,3},{5,2,7,4},{7,3,6,8},{2,4,5,9}}; //定义数组
+
+    max=a[0][0];
+
+    min=a[0][0];
+  //查找行最大值
+    for(i=0;i<4;i++)
+
+  {
+
+    m=i;n=0;p=0;q=0;
+
+    max=a[i][0];
+
+    for(j=0;j<4;j++)
+
+    if(a[i][j]>max)
+
+  { 
+
+    max=a[i][j];
+
+    n=j;
+
+  }
+  //查找列最小值
+
+    min=a[0][n];
+
+    q=n;
+
+    for(j=0;j<4;j++)
+
+    if(a[j][n]<min)
+
+  { 
+
+    min=a[j][n];
+
+    p=j;
+
+  }
+
+    if((p==m)) //既是行最大值，也是列最小值
+
+  {
+
+    printf("鞍点为：%d\n",a[m][n]);
+
+    break;
+
+  }
+
+    else 
+
+    if(i>=3) //没有找到鞍点
+
+    printf("no an dian");
+
+  } 
+
+  }
